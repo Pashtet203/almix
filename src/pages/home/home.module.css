@@ -30,7 +30,7 @@
     background-color: inherit;
 }
 .item__text{
-    font-size: 25px;
+    font-size: clamp(18px, 2vw,25px);
     line-height: 40px;
     text-align: justify;
     word-break: break-word;
@@ -39,4 +39,19 @@
 .item__text::first-letter{
     font-weight: 700;
     /*font-size: 30px;*/
+}
+
+@media (max-width: 640px ) {
+    .item__img{
+        display: none;
+    }
+    .title{
+        border-bottom: 2px solid var(--olive-color);
+    }
+}
+@media (max-width: 430px ) {
+    .item__text{
+        word-break: break-word;
+        text-align: start;
+    }
 }

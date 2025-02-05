@@ -23,7 +23,7 @@ const FeedBackForm = () => {
             </div>
             <div className={cl.form__group}>
                 <textarea
-                    className={cl.form__field}
+                    className={`${cl.form__field} ${cl.textarea}`}
                     style={{fontSize: "1.3rem", minHeight: "200px"}}
                     placeholder={"Расскажите свою историю (какой аромат напоминает вам родные места?)"}
                     id="from"
