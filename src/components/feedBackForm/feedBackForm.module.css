@@ -1,9 +1,11 @@
 .form{
-    max-width: 800px;
+    /*max-width: 800px;*/
     width: 100%;
     /*border: 1px solid var(--olive-color);*/
-    padding: 10px;
-    background-color: transparent;
+    padding: 20px;
+    background-color: var(--white-color);
+    border-radius: 20px;
+
 }
 .form__group {
     position: relative;
@@ -48,7 +50,7 @@
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: var(--main-color);
+    color: var(--olive-color);
 }
 
 .form__field:focus {
@@ -58,13 +60,13 @@
         display: block;
         transition: 0.2s;
         font-size: 1rem;
-        color: var(--main-color);
+        color: var(--olive-color);
         font-weight:500;
     }
     padding-bottom: 6px;
     font-weight: 500;
     border-width: 3px;
-    border-image: linear-gradient(to right, var(--main-color),var(--white-color));
+    border-image: linear-gradient(to right, var(--olive-color),var(--white-color));
     border-image-slice: 1;
 }
 
@@ -74,15 +76,16 @@
 .form__btn{
     width: 100%;
     font-size: 1.3rem;
-    color: var(--olive-color);
-    background-color: var(--main-color);
+    color: var(--white-color);
+    background-color: var(--gray-color);
     outline: none;
-    border: 2px solid var(--olive-color);
+    border: 2px solid var(--gray-color);
     padding: 15px 0;
     cursor: pointer;
     transition: all .4s;
 }
 .form__btn:hover{
-    background-color: var(--olive-color);
-    color: var(--main-color);
+    background-color: var(--white-color);
+    border: 2px solid var(--olive-color);
+    color: var(--olive-color);
 }
