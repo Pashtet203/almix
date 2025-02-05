@@ -41,7 +41,7 @@ const FeedBackForm = () => {
                 <label htmlFor="connection" className={cl.form__label}>Как с вами связаться?</label>
             </div>
             <button className={cl.form__btn}>
-                Отправить
+                Отправить историю
             </button>
         </form>
     );

@@ -3,6 +3,7 @@
     width: 100%;
     /*border: 1px solid var(--olive-color);*/
     padding: 10px;
+    background-color: transparent;
 }
 .form__group {
     position: relative;
@@ -47,7 +48,7 @@
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: var(--gray-color);
+    color: var(--main-color);
 }
 
 .form__field:focus {
@@ -57,13 +58,13 @@
         display: block;
         transition: 0.2s;
         font-size: 1rem;
-        color: var(--gray-color);
+        color: var(--main-color);
         font-weight:500;
     }
     padding-bottom: 6px;
     font-weight: 500;
     border-width: 3px;
-    border-image: linear-gradient(to right, var(--main-color),var(--gray-color));
+    border-image: linear-gradient(to right, var(--main-color),var(--white-color));
     border-image-slice: 1;
 }
 
@@ -74,7 +75,7 @@
     width: 100%;
     font-size: 1.3rem;
     color: var(--olive-color);
-    background-color: transparent;
+    background-color: var(--main-color);
     outline: none;
     border: 2px solid var(--olive-color);
     padding: 15px 0;

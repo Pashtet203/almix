@@ -24,6 +24,7 @@
     padding: 5px;
     font-size: 28px;
     line-height: 50px;
+    word-break: break-word;
 }
 .name{
     color: var(--olive-color);

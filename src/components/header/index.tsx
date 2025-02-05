@@ -4,7 +4,7 @@ import cl from "./header.module.css"
 
 const Header = () => {
     return (
-        <div className={cl.header}>
+        <header className={cl.header}>
             <div className={cl.header__wrapper}>
                 <Icon id={"logo"} className={cl.logo} width={300} height={300} />
                 <hr className={cl.wand}/>
@@ -13,10 +13,10 @@ const Header = () => {
                     будет служить вам источником энергии, вдохновения и радости от результата»
                 </div>
             </div>
-            <div className={cl.btn}>
+            <a className={cl.btn} href={"#main"}>
                 <Icon id={"arrow__down"} width={50} height={50} className={cl.btn__icon} />
-            </div>
-        </div>
+            </a>
+        </header>
     );
 };
 
