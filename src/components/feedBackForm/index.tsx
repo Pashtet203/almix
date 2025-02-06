@@ -4,6 +4,7 @@ import {TUserDataForm} from "../../utils/types";
 import Swal from "sweetalert2";
 import {useFetching} from "../../hooks/useFetching";
 import {sendMessage} from "../../utils/api/sendMessage";
+import {API_KEY} from "../../utils/key";
 const FeedBackForm = () => {
 
 
@@ -16,16 +17,19 @@ const FeedBackForm = () => {
     const checkField = (message:TUserDataForm) =>{
         let {name,from,story,connection} = message;
         if (name.trim() === "" || from.trim() === "" || story.trim() === "" || connection.trim() === ""){
-            return false;
+            return true;
         }
     }
     const onSubmit  = async (event:any) => {
         event.preventDefault();
 
-        if (!checkField(userData)){
+        if (checkField(userData)){
             Swal.fire({
                 title:"Заполните все поля",
-                icon:"info"
+                icon:"info",
+                background:"#FFFCD4",
+                confirmButtonColor:"#6c6c67",
+                iconColor:"#6c6c67",
             })
             return
         }
@@ -36,7 +40,7 @@ const FeedBackForm = () => {
         formData.append("from",userData.from);
         formData.append("story",userData.story);
         formData.append("connection",userData.connection);
-        formData.append("access_key", "e5615027-944a-46b3-a4d0-efb21d9e5892");
+        formData.append("access_key", API_KEY);
 
         const res = await sendMessage(formData)
 
