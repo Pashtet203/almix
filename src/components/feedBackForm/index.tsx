@@ -27,9 +27,9 @@ const FeedBackForm = () => {
             Swal.fire({
                 title:"Заполните все поля",
                 icon:"info",
-                background:"#FFFCD4",
-                confirmButtonColor:"#6c6c67",
-                iconColor:"#6c6c67",
+                background:"#f4bac3",
+                confirmButtonColor:"#ad4c59",
+                iconColor:"#ad4c59",
             })
             return
         }
@@ -47,7 +47,10 @@ const FeedBackForm = () => {
         if (res.success) {
             Swal.fire({
                 title:"Сообщение отправлено",
-                icon:"success"
+                icon:"success",
+                background:"#f4bac3",
+                confirmButtonColor:"#ad4c59",
+                iconColor:"#ad4c59",
             })
             setUserData({
                 name:"",
@@ -59,7 +62,10 @@ const FeedBackForm = () => {
         else {
             Swal.fire({
                 title:"Что то пошло не так, попробуйте позже",
-                icon:"error"
+                icon:"error",
+                background:"#f4bac3",
+                confirmButtonColor:"#ad4c59",
+                iconColor:"#ad4c59",
             })
         }
 

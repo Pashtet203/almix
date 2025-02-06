@@ -6,6 +6,11 @@
     --main-color: #FFFCD4;
     --gray-color: #6c6c67;
     --olive-color: #6c662e;
+    --background-color: #f4e5e5;
+    --red-color:#ad4c59;
+    --Whitlyred-color: #f4bac3;
+    --text-color: #221e1e;
+    --hover-color:#c31e1e;
 }
 *{
     margin: 0;
@@ -18,6 +23,6 @@ html{
 
 
 body{
-    background-color: white;
+    background-color: var(--background-color);
     font-family: Raleway;
 }
