@@ -15,12 +15,40 @@
     max-width: 1300px;
     display: flex;
     justify-content: center;
-
+}
+.logo{
+    width: 18rem;
+    height: 175px;
 }
 .wand{
     border: 1px solid var(--olive-color);
     margin: 0 20px;
 }
+
+.header__contact{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.contact__item{
+    color: var(--gray-color);
+    font-size: clamp(17px, 1.3vw, 20px);
+    text-align: center;
+}
+
+.header__link{
+    color: var(--gray-color);
+    text-decoration: none;
+    padding: 5px;
+    transition: all .4s;
+    border-radius: 8px;
+}
+.header__link:hover{
+    color: var(--white-color);
+    background-color: var(--olive-color);
+}
+
+
 .header__info{
     max-width: 600px;
     text-align: justify;
@@ -30,6 +58,7 @@
     font-size: clamp(18px, 2vw,28px);
     line-height: 50px;
     word-break: break-word;
+    color: var(--gray-color)
 }
 .name{
     color: var(--olive-color);
@@ -71,5 +100,10 @@
         padding: 20px;
         max-width: 100%;
         word-break: break-word;
+    }
+}
+@media (max-width: 555px) {
+    .header__contact{
+        flex-direction: column;
     }
 }

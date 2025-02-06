@@ -4,8 +4,8 @@
 :root{
     --white-color: #FFFDDF;
     --main-color: #FFFCD4;
-    --gray-color: #BFBEA7;
-    --olive-color: #A69F45;
+    --gray-color: #6c6c67;
+    --olive-color: #6c662e;
 }
 *{
     margin: 0;

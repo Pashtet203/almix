@@ -13,9 +13,22 @@ const FeedBackForm = () => {
         story:"",
         connection:"",
     })
+    const checkField = (message:TUserDataForm) =>{
+        let {name,from,story,connection} = message;
+        if (name.trim() === "" || from.trim() === "" || story.trim() === "" || connection.trim() === ""){
+            return false;
+        }
+    }
     const onSubmit  = async (event:any) => {
         event.preventDefault();
 
+        if (!checkField(userData)){
+            Swal.fire({
+                title:"Заполните все поля",
+                icon:"info"
+            })
+            return
+        }
 
 
         const formData = new FormData(event.target);
@@ -62,6 +75,7 @@ const FeedBackForm = () => {
                     value={userData.name}
                     name="name"
                     onChange={(e)=>{inputHandler(e)}}
+                    // required={true}
                 />
                 <label htmlFor="name" className={cl.form__label}>Имя и Фамилия</label>
             </div>
@@ -74,6 +88,7 @@ const FeedBackForm = () => {
                     value={userData.from}
                     name="from"
                     onChange={(e)=>{inputHandler(e)}}
+                    // required={true}
                 />
                 <label htmlFor="from" className={cl.form__label}>Откуда вы ?</label>
             </div>
@@ -86,6 +101,7 @@ const FeedBackForm = () => {
                     value={userData.story}
                     name="story"
                     onChange={(e)=>{inputHandler(e)}}
+                    // required={true}
                 />
                 <label htmlFor="from" className={cl.form__label}>Расскажите свою историю (какой аромат напоминает вам
                     родные места?)</label>
@@ -99,6 +115,7 @@ const FeedBackForm = () => {
                     value={userData.connection}
                     name="connection"
                     onChange={(e)=>{inputHandler(e)}}
+                    // required={true}
                 />
                 <label htmlFor="connection" className={cl.form__label}>Как с вами связаться?</label>
             </div>
