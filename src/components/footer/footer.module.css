@@ -1,10 +1,10 @@
 .footer{
     width: 100%;
-    background-color: var(--red-color);
+    background-color: var(--WhitlyGray-color);
     padding: 20px;
     display: flex;
     flex-direction: column;
-    color: var(--white-color);
+
 }
 .footer__wrapper{
     display: flex;
