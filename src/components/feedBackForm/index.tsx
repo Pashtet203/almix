@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import {useFetching} from "../../hooks/useFetching";
 import {sendMessage} from "../../utils/api/sendMessage";
 import {API_KEY} from "../../utils/key";
+import Loader from "../loader";
 const FeedBackForm = () => {
 
 
@@ -14,41 +15,14 @@ const FeedBackForm = () => {
         story:"",
         connection:"",
     })
-    const checkField = (message:TUserDataForm) =>{
-        let {name,from,story,connection} = message;
-        if (name.trim() === "" || from.trim() === "" || story.trim() === "" || connection.trim() === ""){
-            return true;
-        }
-    }
-    const onSubmit  = async (event:any) => {
-        event.preventDefault();
-
-        if (checkField(userData)){
-            Swal.fire({
-                title:"Заполните все поля",
-                icon:"info",
-                background:"#f4bac3",
-                confirmButtonColor:"#ad4c59",
-                iconColor:"#ad4c59",
-            })
-            return
-        }
-
-
-        const formData = new FormData(event.target);
-        formData.append("name",userData.name);
-        formData.append("from",userData.from);
-        formData.append("story",userData.story);
-        formData.append("connection",userData.connection);
-        formData.append("access_key", API_KEY);
-
+    const [request,setRequest]=useState()
+    const [fetchMessage,loading,error] = useFetching(async (formData)=>{
         const res = await sendMessage(formData)
-
         if (res.success) {
             Swal.fire({
                 title:"Сообщение отправлено",
                 icon:"success",
-                background:"#f4bac3",
+                background:"#f5dbdb",
                 confirmButtonColor:"#ad4c59",
                 iconColor:"#ad4c59",
             })
@@ -63,11 +37,44 @@ const FeedBackForm = () => {
             Swal.fire({
                 title:"Что то пошло не так, попробуйте позже",
                 icon:"error",
-                background:"#f4bac3",
+                background:"#f5dbdb",
                 confirmButtonColor:"#ad4c59",
                 iconColor:"#ad4c59",
             })
         }
+
+    })
+    const checkField = (message:TUserDataForm) =>{
+        let {name,from,story,connection} = message;
+        if (name.trim() === "" || from.trim() === "" || story.trim() === "" || connection.trim() === ""){
+            return true;
+        }
+    }
+    const onSubmit  = async (event:any) => {
+        event.preventDefault();
+
+        if (checkField(userData)){
+            Swal.fire({
+                title:"Заполните все поля",
+                icon:"info",
+                background:"#f5dbdb",
+                confirmButtonColor:"#ad4c59",
+                iconColor:"#ad4c59",
+            })
+            return
+        }
+
+
+        const formData = new FormData(event.target);
+        formData.append("name",userData.name);
+        formData.append("from",userData.from);
+        formData.append("story",userData.story);
+        formData.append("connection",userData.connection);
+        formData.append("access_key", API_KEY);
+
+        fetchMessage(formData)
+
+
 
     };
     const inputHandler = (e:any)=>{
@@ -129,8 +136,15 @@ const FeedBackForm = () => {
                 />
                 <label htmlFor="connection" className={cl.form__label}>Как с вами связаться?</label>
             </div>
-            <button type="submit" className={cl.form__btn}>
-                Отправить историю
+            <button type="submit" className={cl.form__btn} disabled={loading}>
+                {
+                    loading
+                    ?
+                        <Loader/>
+                    :
+                        "Отправить историю"
+                }
+
             </button>
         </form>
     );
