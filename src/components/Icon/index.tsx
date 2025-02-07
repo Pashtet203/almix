@@ -2,6 +2,7 @@ import React from 'react';
 import {ReactComponent as Logo} from "../../media/img/logo.svg";
 import {ReactComponent as ArrowDown} from "../../media/img/arrow__down.svg";
 
+
 type TIconProps = {
     id:string,
     className?: string,
