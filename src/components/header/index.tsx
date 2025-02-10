@@ -17,9 +17,9 @@ const Header = () => {
                         <p className={cl.contact__item}>
                             Почта:<a className={cl.header__link} href="mailto:zabota@al-mix.ru "> zabota@al-mix.ru </a>
                         </p>
-                        <p className={cl.contact__item}>
-                            Телефон:<a className={cl.header__link} href="tel:"> 9999999999999 </a>
-                        </p>
+                        {/*<p className={cl.contact__item}>*/}
+                        {/*    Телефон:<a className={cl.header__link} href="tel:"> 9999999999999 </a>*/}
+                        {/*</p>*/}
                     </div>
                 </div>
             </div>
