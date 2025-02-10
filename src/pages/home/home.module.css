@@ -23,6 +23,12 @@
     align-items: center;
     width: 100%;
 }
+.about__list{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 .list__item{
     display: flex;
     margin: 20px 0;

@@ -15,25 +15,26 @@ const Footer = () => {
                     Лучшие истории попадут на этикетки наших новых средств!
                 </p>
                 <div className={cl.prizes}>
-                    <p className={cl.prizes__info} >
+                    <p className={cl.prizes__info}>
                         Что получите ?
                     </p>
                     <ul className={cl.prizes__list}>
-                        <li className={cl.list__item} style={{listStyleImage:"url(" + flower1 +")"}}>
+                        <li className={cl.list__item} style={{listStyleImage: "url(" + flower1 + ")"}}>
                             ЭКО-подарки всем участникам
                         </li>
-                        <li className={cl.list__item} style={{listStyleImage:"url(" + flower2 +")"}}>
+                        <li className={cl.list__item} style={{listStyleImage: "url(" + flower2 + ")"}}>
                             Возможность увидеть свой рассказ на упаковке
                         </li>
-                        <li className={cl.list__item} style={{listStyleImage:"url(" + flower3 +")"}}>
+                        <li className={cl.list__item} style={{listStyleImage: "url(" + flower3 + ")"}}>
                             Самых интересных героев мы приедем снимать в их родной край!
                         </li>
                     </ul>
                 </div>
+                <div className={cl.form__wrapper}>
+                    <FeedBackForm/>
+                </div>
             </div>
-            <div className={cl.form__wrapper}>
-                <FeedBackForm/>
-            </div>
+
         </footer>
     );
 };
